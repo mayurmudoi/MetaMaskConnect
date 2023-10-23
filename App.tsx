@@ -1,9 +1,5 @@
 import { StyleSheet, Text, View, Pressable, TouchableOpacity } from 'react-native';
-
-import {
-	WalletConnectModal,
-	useWalletConnectModal,
-} from '@walletconnect/modal-react-native';
+import {WalletConnectModal,useWalletConnectModal} from '@walletconnect/modal-react-native';
 
 const projectId = 'YOUR_WALLET_CONNECT_PROJECT_ID';
 
@@ -21,8 +17,7 @@ const providerMetadata = {
 export default function App() {
 
 	const { open, isConnected, address, provider } = useWalletConnectModal();
-
-	const handleButtonPress = async () => {
+  const handleButtonPress = async () => {
 		if (isConnected) {
 			return provider?.disconnect();
 		}
