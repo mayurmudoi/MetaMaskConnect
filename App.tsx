@@ -17,7 +17,7 @@ const providerMetadata = {
 export default function App() {
 
 	const { open, isConnected, address, provider } = useWalletConnectModal();
-  const handleButtonPress = async () => {
+  	const handleButtonPress = async () => {
 		if (isConnected) {
 			return provider?.disconnect();
 		}
@@ -29,9 +29,9 @@ export default function App() {
 			<Text style={styles.heading}>Wallet Connect</Text>
 			<Text style={styles.connection}>{isConnected ? address : 'Not Connected'}</Text>
 
-      <TouchableOpacity style={[styles.button, styles.connection]} onPress={handleButtonPress}>
-        <Text style={styles.buttonText}>{isConnected ? 'Disconnect' : 'CONNECT'}</Text>
-      </TouchableOpacity>
+      			<TouchableOpacity style={[styles.button, styles.connection]} onPress={handleButtonPress}>
+        			<Text style={styles.buttonText}>{isConnected ? 'Disconnect' : 'CONNECT'}</Text>
+      			</TouchableOpacity>
 
 			<WalletConnectModal
 				explorerRecommendedWalletIds={[
@@ -46,31 +46,31 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	heading: {
-		fontSize: 30,
-    letterSpacing:2,
-    marginBottom: 16,
-    fontWeight:'300'
-	},
-  connection:{
-    padding:10,
-    fontSize:18,
-    borderRadius:10,
-  },
-	button: {
-    width:150,
-    marginTop: 16,
-    alignItems:'center',
-    backgroundColor:'#cab287',
-	},
-  buttonText:{
-    fontSize:20,
-    letterSpacing:2,
-    fontWeight:'500',
-  }
+container: {
+	flex: 1,
+	alignItems: 'center',
+	justifyContent: 'center',
+},
+heading: {
+	fontSize: 30,
+    	letterSpacing:2,
+    	marginBottom: 16,
+    	fontWeight:'300'
+},
+connection:{
+    	padding:10,
+	fontSize:18,
+    	borderRadius:10,
+},
+button: {
+    	width:150,
+    	marginTop: 16,
+    	alignItems:'center',
+    	backgroundColor:'#cab287',
+},
+buttonText:{
+    	fontSize:20,
+    	letterSpacing:2,
+    	fontWeight:'500',
+}
 });
